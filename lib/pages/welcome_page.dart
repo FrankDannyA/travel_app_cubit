@@ -37,6 +37,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   //text with button
                   Column(
@@ -64,8 +65,25 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       ResponsiveButton(
                         width: 120,
-                      )
+                      ),
                     ],
+                  ),
+
+                  //vertical slider
+                  Column(
+                    children: List.generate(3, (indexDots) {
+                      return Container(
+                        margin: const EdgeInsets.only(bottom: 2),
+                        width: 8,
+                        height: index == indexDots ? 25 : 8,
+                        decoration: BoxDecoration(
+                          color: index == indexDots
+                              ? AppColors.mainColor
+                              : AppColors.mainColor.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      );
+                    }),
                   )
                 ],
               ),
