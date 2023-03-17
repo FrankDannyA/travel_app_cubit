@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app_cubit/misc/colors.dart';
 import 'package:travel_app_cubit/widgets/app_large_text.dart';
 import 'package:travel_app_cubit/widgets/app_text.dart';
+import 'package:travel_app_cubit/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -37,6 +38,7 @@ class _WelcomePageState extends State<WelcomePage> {
               margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
               child: Row(
                 children: [
+                  //text with button
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -56,6 +58,12 @@ class _WelcomePageState extends State<WelcomePage> {
                           color: AppColors.textColor2,
                           size: 14,
                         ),
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      ResponsiveButton(
+                        width: 120,
                       )
                     ],
                   )
