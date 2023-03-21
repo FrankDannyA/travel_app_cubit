@@ -3,6 +3,7 @@ import 'package:travel_app_cubit/misc/colors.dart';
 import 'package:travel_app_cubit/widgets/app_button.dart';
 import 'package:travel_app_cubit/widgets/app_large_text.dart';
 import 'package:travel_app_cubit/widgets/app_text.dart';
+import 'package:travel_app_cubit/widgets/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -37,6 +38,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
               ),
             ),
+
             //app bar elements
             Positioned(
               left: 20,
@@ -51,6 +53,7 @@ class _DetailPageState extends State<DetailPage> {
                 ],
               ),
             ),
+
             //detail view elements
             Positioned(
               top: 320,
@@ -83,6 +86,7 @@ class _DetailPageState extends State<DetailPage> {
                       ],
                     ),
                     const SizedBox(height: 10),
+
                     //locatiom
                     Row(
                       children: [
@@ -95,6 +99,7 @@ class _DetailPageState extends State<DetailPage> {
                       ],
                     ),
                     const SizedBox(height: 20),
+
                     //star wiget
                     Row(
                       children: [
@@ -112,6 +117,7 @@ class _DetailPageState extends State<DetailPage> {
                         AppText(text: "4.0", color: AppColors.textColor2),
                       ],
                     ),
+
                     //number of people
                     const SizedBox(height: 30),
                     AppLargeText(
@@ -152,10 +158,45 @@ class _DetailPageState extends State<DetailPage> {
                         );
                       }),
                     ),
+                    const SizedBox(height: 20),
+
+                    //description
+                    AppLargeText(
+                      text: "Description",
+                      size: 20,
+                      color: Colors.black.withOpacity(0.8),
+                    ),
+                    const SizedBox(height: 10),
+                    AppText(
+                      text:
+                          "Yosemite National Park is located in central Sierra Nevada in the US state of California. It is located near the wild protected areas.",
+                      color: AppColors.mainTextColor,
+                    ),
                   ],
                 ),
               ),
             ),
+            Positioned(
+              left: 20,
+              right: 20,
+              bottom: 30,
+              child: Row(
+                children: [
+                  AppButton(
+                    size: 60,
+                    color: AppColors.textColor1,
+                    backgroundColor: Colors.white,
+                    borderColor: AppColors.textColor1,
+                    isIcon: true,
+                    icon: Icons.favorite_border,
+                  ),
+                  const SizedBox(width: 20),
+                  ResponsiveButton(
+                    isResponsive: true,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

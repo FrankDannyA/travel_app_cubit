@@ -13,7 +13,7 @@ class AppButton extends StatelessWidget {
   AppButton({
     Key? key,
     this.isIcon = false,
-    this.text,
+    this.text = "Hi",
     this.icon,
     required this.size,
     required this.color,
