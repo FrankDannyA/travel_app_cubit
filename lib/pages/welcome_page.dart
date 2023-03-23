@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app_cubit/cubit/app_cubit_states.dart';
 import 'package:travel_app_cubit/misc/colors.dart';
 import 'package:travel_app_cubit/widgets/app_large_text.dart';
 import 'package:travel_app_cubit/widgets/app_text.dart';
@@ -63,8 +65,20 @@ class _WelcomePageState extends State<WelcomePage> {
                       const SizedBox(
                         height: 40,
                       ),
-                      ResponsiveButton(
-                        width: 120,
+                      GestureDetector(
+                        onTap: () {
+                          BlocProvider.of<AppCubits>(context).getData();
+                        },
+                        child: SizedBox(
+                          width: 120,
+                          child: Row(
+                            children: [
+                              ResponsiveButton(
+                                width: 120,
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),

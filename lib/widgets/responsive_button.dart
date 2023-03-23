@@ -5,9 +5,11 @@ import 'package:travel_app_cubit/widgets/app_text.dart';
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
+  VoidCallback? onTap;
 
   ResponsiveButton({
     Key? key,
+    this.onTap,
     this.isResponsive,
     this.width = 120,
   }) : super(key: key);
